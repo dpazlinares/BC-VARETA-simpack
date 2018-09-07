@@ -1,4 +1,15 @@
 # BC-VARETA
 Includes the routines of the Brain Connectivity Variable Resolution Tomographic Analysis (BC-VARETA), a Simulation Package for MEEG  and other well established Methods for comparison purpose. BC-VARETA and the other Methods within the package extract the Source Activity and Connectivity given a single frequency component in the Fourier Transform Domain of an Individual MEEG Data.
 
-Its currently acknowledged that a simplified estimation of connectivity at the Magnetoencephalography and Electroencephalography (MEEG) sensor space is fraught with several problems due to the volume conduction distortion. It would seem however, that a solution to this issue is carrying out connectivity analysis at the generators space. Meanwhile, a major criticism falls on that most of the source connectivity methods are distressed by the “Leakage Effect”, i.e. linear mixing of the reconstructed sources. We address this problem by means of a novel method, that allows us to “caulk” the “Leakage Effect” in MEEG sources activity and connectivity: BC-VARETA. This is done by leveraging two methodological aspects. First: Joint estimation of source activity and connectivity as a frequency domain linear dynamical system identification approach. Second: Incorporating priors into the sources graphical model of the connectivity estimator. Our claims are supported by a large simulation framework, that uses realistic head models, diverse sources setup, biological/instrumentation noisy signals, and Inverse Crime evaluation. Also, a fair quantitative analysis is performed based on measures of the ‘Leakage Effect’, in which state of the art inverse solvers were tested.
+- Main (execute this one): generates simulation of 4 cortical connected points and reproduces the results of BC-VARETA, sLORETA and LCMV.
+- surfpatch_v1: creates parches around the cortical points for visualization of the connectivity in a reduced space  
+- mkpinknoise: generates pink noise in source and sensor spaces
+- xspectrum: computes the spectra of the simulated scalp activity 
+- scalp_topography: crates plots with the topographic maps of activity and connectivity
+- bcvareta: executes BC-VARETA method
+- bcvareta_initial_values: computes 'bcvareta' initialization
+- screening_ssbl: extracts the posibly active generators as part of 'bcvareta_initial_values', using the Elastic Net Structured Sparse
+  Bayesian Learning
+- screening: applies a smoothing to the outputs of 'screening_ssbl'
+- mkfilt_eloreta: computes eLORETA method
+- mkfilt_lcmv: computes LCMV method
