@@ -36,7 +36,6 @@ for cont1 = 1:maxiter1
     SJJ              = T*Svv*Tt; % Source Empirical Covariance Matrix
     PsiJJ            = SigmaJJ + SJJ; % Effective Source Empirical Covariance Matrix
     WJJ              = PsiJJ; % Naive Source Covariance Matrix estimator 
-%     varSJJ           = abs(diag(SJJ)); % Variances Source Empirical Covariance Matrix  
     %%
     %% Source Graphical Model Local Quadratic Approximation
     [ThetaJJ]        = sggm_lqa(PsiJJ,m,lambda2,rho,maxiter11); % Source Precision Matrix estimator
@@ -44,14 +43,9 @@ for cont1 = 1:maxiter1
     %% Unbiased Source Precision Matrix estimator
     ThetaJJ          = 2*ThetaJJ - ThetaJJ*PsiJJ*ThetaJJ; % Unbiased Source Precision Matrix estimator
     varThetaJJ       = abs(diag(ThetaJJ))*abs(diag(ThetaJJ))' + abs(ThetaJJ).^2; % Consistent variances Unbiased Source Precision Matrix estimator    
-%     ThetaJJ(mask1,:) = 0;
-%     ThetaJJ(:,mask1) = 0;
     ThetaJJ(mask2)   = 0;
-    %% Threshold mask given the Unbiased Source Precision Matrix and Source Effective Empirical Covariance Normal tendency
-%     [mask1]          = find(varSJJ < 0.05*max(varSJJ)); % "SJJ < 0.05*max(varSJJ)" Thresholding mask
-    [mask2]          = find(abs(ThetaJJ).^2 < (0.05/log(m))*(varThetaJJ - diag(diag(varThetaJJ)))); % "ThetaJJ < 0.005varThetaJJ" Thresholding mask
-%     ThetaJJ(mask1,:) = 0;
-%     ThetaJJ(:,mask1) = 0;
+    %% Threshold mask given the Unbiased Source Precision Matrix Normal tendency
+    [mask2]          = find(abs(ThetaJJ).^2 < (0.05/log(m))*(varThetaJJ - diag(diag(varThetaJJ)))); % "ThetaJJ < 0.05varThetaJJ" Thresholding mask
     ThetaJJ(mask2)   = 0;
     %%
     %% Noise Variance estimator
