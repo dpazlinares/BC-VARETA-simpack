@@ -15,6 +15,7 @@ https://lstneuro-my.sharepoint.com/:u:/g/personal/deirel_paz_neuroinformatics-co
 - bcvareta_initial_values: computes 'bcvareta' initialization
 - screening_ssbl: extracts the posibly active generators as part of 'bcvareta_initial_values', using the Elastic Net Structured Sparse
   Bayesian Learning
+- trascendent_term: nonlinear function for regularization parameters estimation within the function 'screening_ssbl'     
 - screening: applies a smoothing to the outputs of 'screening_ssbl'
 - mkfilt_eloreta: computes eLORETA method
 - mkfilt_lcmv: computes LCMV method
