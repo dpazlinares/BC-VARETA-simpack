@@ -5,6 +5,7 @@ Includes the routines of the Brain Connectivity Variable Resolution Tomographic 
 
 https://lstneuro-my.sharepoint.com/:u:/g/personal/deirel_paz_neuroinformatics-collaboratory_org/EVCqmmZ9d9dLrOTb37bpfrwB8yU3xAIk6AXJB7vzzkiz2g?e=Oa2Eqc
 
+BC-VARETA-master:
 - Main (**execute this routine for demosntration**): generates simulation of 4 cortical connected points and reproduces the results of 
   BC-VARETA, sLORETA and LCMV.
 - surfpatch_v1: creates parches around the cortical points for visualization of the connectivity in a reduced space  
@@ -18,3 +19,4 @@ https://lstneuro-my.sharepoint.com/:u:/g/personal/deirel_paz_neuroinformatics-co
 - screening: applies a smoothing to the outputs of 'screening_ssbl'
 - mkfilt_eloreta: computes eLORETA method
 - mkfilt_lcmv: computes LCMV method
+- data: folder containing leadfield, surfaces, colormaps, etc 
