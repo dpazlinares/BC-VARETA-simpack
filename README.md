@@ -10,7 +10,6 @@ https://lstneuro-my.sharepoint.com/:u:/g/personal/deirel_paz_neuroinformatics-co
 - surfpatch_v1: creates parches around the cortical points for visualization of the connectivity in a reduced space  
 - mkpinknoise: generates pink noise in source and sensor spaces
 - xspectrum: computes the spectra of the simulated scalp activity 
-- scalp_topography: crates plots with the topographic maps of activity and connectivity
 - bcvareta: executes BC-VARETA method
 - bcvareta_initial_values: computes 'bcvareta' initialization
 - screening_ssbl: extracts the posibly active generators as part of 'bcvareta_initial_values', using the Elastic Net Structured Sparse
