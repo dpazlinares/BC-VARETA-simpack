@@ -160,32 +160,6 @@ title('Ground truth','Color','w','FontSize',16);
 %% forward problem
 Svv = K_6k*Sjj*K_6k';
 
-%% biological noise, mixture of independent pink noise sources...
-% n_noise_sources   = round(0.03*Np1);
-% ind_noise_rand    = randperm(Np1);
-% ind_noise         = ind_noise_rand(1:n_noise_sources)';
-% pn                = mkpinknoise(Nseg, n_noise_sources)';
-% norm_brain_noise  = norm(pn, 'fro');
-% Sjj_brain_noise   = K_6k(:, ind_noise)*pn;
-% Sjj_brain_noise   = Sjj_brain_noise ./ norm_brain_noise;
-% [Svv_brain_noise] = xspectrum(Sjj_brain_noise,[],[],[],1);
-% Svv_brain_noise   = Svv_brain_noise(:,:,1);
-% Svv_brain_noise   = Svv_brain_noise ./ norm(Svv_brain_noise(:), 'fro');
-
-%% white electrode noise...
-% Svv_channel_noise   = randn(Ne1,Nseg);
-% Svv_channel_noise   = Svv_channel_noise ./ norm(Svv_channel_noise, 'fro');
-% [Svv_channel_noise] = xspectrum(Svv_channel_noise,[],[],[],1);
-% Svv_channel_noise   = Svv_channel_noise(:,:,1);
-% Svv_channel_noise   = Svv_channel_noise ./ norm(Svv_channel_noise(:), 'fro');
-
-%% updating Svv with noise
-% Svv                 = Svv ./ norm(Svv(:), 'fro');
-% Svv                 = snr*Svv+(1-snr)*Svv_brain_noise;
-% Svv                 = Svv ./ norm(Svv, 'fro');
-% Svv                 = snr_ch*Svv + (1-snr_ch)*Svv_channel_noise;
-% Svv                 = Svv ./ norm(Svv, 'fro');
-
 %% inverse covariance matrix 
 Svv_inv = pinv(Svv);
 
