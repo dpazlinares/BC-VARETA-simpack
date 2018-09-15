@@ -9,8 +9,6 @@ BC-VARETA-master:
 - Main (**execute this routine for demosntration**): generates simulation of 4 cortical connected points and reproduces the results of 
   BC-VARETA, sLORETA and LCMV.
 - surfpatch_v1: creates parches around the cortical points for visualization of the connectivity in a reduced space  
-- mkpinknoise: generates pink noise in source and sensor spaces
-- xspectrum: computes the spectra of the simulated scalp activity 
 - bcvareta: executes BC-VARETA method
 - bcvareta_initial_values: computes 'bcvareta' initialization
 - screening_ssbl: extracts the posibly active generators as part of 'bcvareta_initial_values', using the Elastic Net Structured Sparse
