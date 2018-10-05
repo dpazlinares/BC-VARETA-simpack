@@ -1,5 +1,7 @@
 # BC-VARETA
 Includes the routines of the Brain Connectivity Variable Resolution Tomographic Analysis (BC-VARETA), a Simulation Package for MEEG  and other well established Methods for comparison purpose. BC-VARETA and the other Methods within the package extract the Source Activity and Connectivity given a single frequency component in the Fourier Transform Domain of an Individual MEEG Data. See the pdf file "Brief of Theory and Results" for an insight to this methodology.
+References:
+
 
 ***First download the complementary file 'data.rar' from the link below, extract the contained subfolder and copy it along with the routines into a common folder***
 
