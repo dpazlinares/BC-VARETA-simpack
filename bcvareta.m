@@ -45,7 +45,7 @@ for cont1 = 1:maxiter1
     varThetaJJ       = abs(diag(ThetaJJ))*abs(diag(ThetaJJ))' + abs(ThetaJJ).^2; % Consistent variances Unbiased Source Precision Matrix estimator    
     ThetaJJ(mask2)   = 0;
     %% Threshold mask given the Unbiased Source Precision Matrix Normal tendency
-    [mask2]          = find(abs(ThetaJJ).^2 < (0.05/m)*(varThetaJJ - diag(diag(varThetaJJ)))); % "ThetaJJ < 0.05varThetaJJ" Thresholding mask
+    [mask2]          = find(abs(ThetaJJ).^2 < (0.05/m)*(varThetaJJ - diag(diag(varThetaJJ)))); % "sqrt(m)*abs(ThetaJJ)./varThetaJJ.^(1/2) < 0.2236" Thresholding mask
     ThetaJJ(mask2)   = 0;
     %%
     %% Noise Variance estimator
